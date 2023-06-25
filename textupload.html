@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> upload your text here </title>
+</head>
+<body>
+    <h1>Text Upload Example</h1>
+
+    <input type="text" id="text-input" placeholder="Enter your text">
+    <button id="upload-button" onclick="displayText()">Upload</button>
+
+    <div id="display-container"></div>
+
+    <script>
+        function displayText() {
+            var textInput = document.getElementById('text-input').value;
+            var displayContainer = document.getElementById('display-container');
+            displayContainer.textContent = textInput;
+        }
+    </script>
+</body>
+</html>
+                                 

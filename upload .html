@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>upload  Your image </title>
+    <style>
+        #upload-container {
+            display: none;
+        }
+        
+        #image-preview {
+            max-width: 300px;
+            max-height: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Upload Example</h1>
+
+    <button id="upload-button" onclick="showUpload()">Upload Image</button>
+
+    <div id="upload-container">
+        <input type="file" id="image-input" onchange="previewImage(event)">
+        <img id="image-preview" src="#" alt="Image Preview">
+    </div>
+
+    <script>
+        function showUpload() {
+            var uploadContainer = document.getElementById('upload-container');
+            uploadContainer.style.display = 'block';
+        }
+
+        function previewImage(event) {
+            var image = document.getElementById('image-preview');
+            var file = event.target.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(event) {
+                image.src = event.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+</html>
